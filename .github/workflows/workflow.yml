@@ -15,9 +15,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [macos-latest, ubuntu-latest]
         ocaml:
           - ocaml-base-compiler.5.1.0
+          - ocaml-base-compiler.5.1.1
+          - ocaml-base-compiler.5.2.0
 
     runs-on: ${{ matrix.os }}
 
