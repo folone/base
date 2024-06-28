@@ -15,6 +15,7 @@ depends: [
   "sexplib0"
   "dune"                    {>= "3.11.0"}
   "dune-configurator"
+  "num" {with-test}
 ]
 available: arch != "arm32" & arch != "x86_32"
 synopsis: "Full standard library replacement for OCaml"
