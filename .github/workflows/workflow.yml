@@ -34,8 +34,10 @@ jobs:
           dune-cache: true
           ocaml-compiler: ${{ matrix.ocaml }}
 
+      - run: opam repo add janestreet-bleeding https://ocaml.janestreet.com/opam-repository
+
       - name: Build dependencies
-        run: opam repo add janestreet-bleeding https://ocaml.janestreet.com/opam-repository && opam install . --deps-only --with-test
+        run: opam install . --deps-only --with-test
 
       - name: Build library
         run: opam exec -- dune build
