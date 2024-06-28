@@ -35,7 +35,7 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml }}
 
       - name: Build dependencies
-        run: opam install . --deps-only --with-test
+        run: opam repo add janestreet-bleeding https://ocaml.janestreet.com/opam-repository && opam install . --deps-only --with-test
 
       - name: Build library
         run: opam exec -- dune build

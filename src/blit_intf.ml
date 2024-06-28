@@ -161,7 +161,7 @@ module type Blit = sig
   module Make_to_string (T : sig
     type t
   end)
-  (To_bytes : S_distinct with type src := T.t with type dst := bytes) :
+  (_ : S_distinct with type src := T.t with type dst := bytes) :
     S_to_string with type t := T.t
 
   (** [Make1] is for blitting between two values of the same polymorphic type. *)

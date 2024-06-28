@@ -478,21 +478,21 @@ module type Applicative = sig
     (X : For_let_syntax) (Intf : sig
       module type S
     end)
-    (Impl : Intf.S) :
+    (_ : Intf.S) :
     Let_syntax with type 'a t := 'a X.t with module Open_on_rhs_intf := Intf
 
   module Make_let_syntax2
     (X : For_let_syntax2) (Intf : sig
       module type S
     end)
-    (Impl : Intf.S) :
+    (_ : Intf.S) :
     Let_syntax2 with type ('a, 'e) t := ('a, 'e) X.t with module Open_on_rhs_intf := Intf
 
   module Make_let_syntax3
     (X : For_let_syntax3) (Intf : sig
       module type S
     end)
-    (Impl : Intf.S) :
+    (_ : Intf.S) :
     Let_syntax3
       with type ('a, 'd, 'e) t := ('a, 'd, 'e) X.t
       with module Open_on_rhs_intf := Intf
